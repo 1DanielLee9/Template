@@ -56,9 +56,8 @@
                                 <p>Class</p>
                                 <select name="jenis_kelas" class="form-control show-tick" id="trainClass" onchange="classMode()">
                                     <option value="" aria-placeholder="Pilih Salah Satu"></option>
-                                    <option value="Ekonomi AC">Ekonomi AC</option>
-                                    <option value="Bisnis">Bisnis</option>
-                                    <option value="Eksekutif">Eksekutif</option>
+                                    <option value="Economy">Economy</option>
+                                    <option value="Bussiness">Bussiness</option>                    
                                 </select>
                             </div>
                             <div class="form-group">                                
@@ -66,44 +65,230 @@
                                     <p>
                                         <b>From</b>
                                     </p>
-                                    <select name="asal_kereta" class="form-control show-tick" data-live-search="true">
-                                        <optgroup label="Jawa Tengah">
-                                            <option value="Semarang">Semarang</option>
-                                            <option value="Pekalongan">Pekalongan</option>
-                                            <option value="Pemalang">Pemalang</option>
+                                    <select name="asal_kereta" data-size="3" class="form-control show-tick" data-live-search="true">
+                                        <optgroup label="Sumatra">
+                                            <option value="Banda Aceh">Banda Aceh</option>
+                                            <option value="Medan">Medan</option>
+                                            <option value="Padang">Padang</option>
+                                            <option value="Pekan Baru">Pekan Baru</option>
+                                            <option value="Jambi">Jambi</option>
+                                            <option value="Bengkulu">Bengkulu</option>
+                                            <option value="Pangkal Pinang">Pangkal Pinang</option>
+                                            <option value="Palembang">Palembang</option>
+                                            <option value="Bandar Lampung">Bandar Lampung</option>
                                         </optgroup>
-                                        <optgroup label="DKI Jakarta">
-                                            <option value="Jakarta">Jakarta</option>
-                                            <option value="Tanah Abang">Tanah Abang</option>
+                                        <optgroup label="Banten & D.K.I. Jakarta">
+                                            <option value="Lebak">Lebak</option>
+                                            <option value="Pandeglang">Pandeglang</option>
+                                            <option value="Serang">Serang</option>
+                                            <option value="Tangerang">Tangerang</option>
+                                            <option value="Cilegon">Cilegon</option>
+                                            <option value="Gambir">Gambir</option>
                                             <option value="Pasar Senen">Pasar Senen</option>
                                         </optgroup>
                                         <optgroup label="Jawa Barat">
+                                            <option value="Bekasi">Bekasi</option>
                                             <option value="Bandung">Bandung</option>
-                                            <option value="Cikampek">Cikampek</option>
-                                            <option value="Andir">Andir</option>
-                                        </optgroup>                                        
+                                            <option value="Bogor">Bogor</option>
+                                            <option value="Ciamis">Ciamis</option>
+                                            <option value="Cianjur">Cianjur</option>
+                                            <option value="Cirebon">Cirebon</option>
+                                            <option value="Garut">Garut</option>
+                                            <option value="Indramayu">Indramayu</option>
+                                            <option value="Karawang">Karawang</option>
+                                            <option value="Kuningan">Kuningan</option>
+                                            <option value="Majalengka">Majalengka</option>
+                                            <option value="Pangandaran">Pangandaran</option>
+                                            <option value="Purwakarta">Purwakarta</option>
+                                            <option value="Subang">Subang</option>
+                                            <option value="Sukabumi">Sukabumi</option>
+                                            <option value="Sumedang">Sumedang</option>
+                                            <option value="Tasikmalaya">Tasikmalaya</option>
+                                            <option value="Banjar">Banjar</option>
+                                            <option value="Cimahi">Cimahi</option>
+                                            <option value="Depok">Depok</option>                                            
+                                        </optgroup>
+                                        <optgroup label="Jawa Tengah">
+                                            <option value="Banjarnegara">Banjarnegara</option>
+                                            <option value="Banyumas">Banyumas</option>
+                                            <option value="Batang">Batang</option>
+                                            <option value="Blora">Blora</option>
+                                            <option value="Boyolali">Boyolali</option>
+                                            <option value="Brebes">Brebes</option>
+                                            <option value="Cilacap">Cilacap</option>
+                                            <option value="Demak">Demak</option>
+                                            <option value="Grobogan">Grobogan</option>
+                                            <option value="Jepara">Jepara</option>
+                                            <option value="Karanganyar">Karanganyar</option>
+                                            <option value="Kebumen">Kebumen</option>
+                                            <option value="Kendal">Kendal</option>
+                                            <option value="Klaten">Klaten</option>
+                                            <option value="Kudus">Kudus</option>
+                                            <option value="Megelang">Megelang</option>
+                                            <option value="Pati">Pati</option>
+                                            <option value="Pekalongan">Pekalongan</option>
+                                            <option value="Pemalang">Pemalang</option>
+                                            <option value="Purbalingga">Purbalingga</option>
+                                            <option value="Purworejo">Purworejo</option>
+                                            <option value="Rembang">Rembang</option>
+                                            <option value="Semarang">Semarang</option>
+                                            <option value="Sragen">Sragen</option>
+                                            <option value="Sukoharjo">Sukoharjo</option>
+                                            <option value="Tegal">Tegal</option>
+                                            <option value="Temanggung">Temanggung</option>
+                                            <option value="Wonogiri">Wonogiri</option>
+                                            <option value="Wonosobo">Wonosobo</option>
+                                            <option value="Surakarta">Surakarta</option>
+                                            <option value="Salatiga">Salatiga</option>
+                                            <option value="Pekalongan">Pekalongan</option>
+                                        </optgroup>
+                                        <optgroup label="Jawa Timur">
+                                            <option value="Bangkalan">Bangkalan</option>
+                                            <option value="Banyuwangi">Banyuwangi</option>
+                                            <option value="Blitar">Blitar</option>
+                                            <option value="Bojonegoro">Bojonegoro</option>
+                                            <option value="Bondowoso">Bondowoso</option>
+                                            <option value="Gresik">Gresik</option>
+                                            <option value="Jember">Jember</option>
+                                            <option value="Jombang">Jombang</option>
+                                            <option value="Kediri">Kediri</option>
+                                            <option value="Lamongan">Lamongan</option>
+                                            <option value="Lumajang">Lumajang</option>
+                                            <option value="Malang">Malang</option>
+                                            <option value="Mojokerto">Mojokerto</option>
+                                            <option value="Nganjuk">Nganjuk</option>
+                                            <option value="Ngawi">Ngawi</option>
+                                            <option value="Pacitan">Pacitan</option>
+                                            <option value="Pamekasan">Pamekasan</option>
+                                            <option value="Pasuruan">Pasuruan</option>
+                                            <option value="Ponorogo">Ponorogo</option>
+                                            <option value="Probolinggo">Probolinggo</option>
+                                            <option value="Sampang">Sampang</option>
+                                            <option value="Sidoarjo">Sidoarjo</option>
+                                            <option value="Situbondo">Situbondo</option>
+                                            <option value="Sumenep">Sumenep</option>
+                                            <option value="Trenggalek">Trenggalek</option>
+                                            <option value="Tuban">Tuban</option>
+                                            <option value="Tulungagung">Tulungagung</option>
+                                            <option value="Batu">Batu</option>
+                                            <option value="Madiun">Madiun</option>
+                                            <option value="Surabaya">Surabaya</option>                                            
+                                        </optgroup>                                   
                                     </select>
                                 </div>
                                 <div class="col-md-6">
                                     <p>
                                         <b>To</b>
                                     </p>
-                                    <select name="tujuan_kereta" class="form-control show-tick" data-live-search="true">
-                                        <optgroup label="Jawa Tengah">
-                                            <option value="Semarang">Semarang</option>
-                                            <option value="Pekalongan">Pekalongan</option>
-                                            <option value="Pemalang">Pemalang</option>
+                                    <select name="tujuan_kereta" data-size="3" class="form-control show-tick" data-live-search="true">
+                                        <optgroup label="Sumatra">
+                                            <option value="Banda Aceh">Banda Aceh</option>
+                                            <option value="Medan">Medan</option>
+                                            <option value="Padang">Padang</option>
+                                            <option value="Pekan Baru">Pekan Baru</option>
+                                            <option value="Jambi">Jambi</option>
+                                            <option value="Bengkulu">Bengkulu</option>
+                                            <option value="Pangkal Pinang">Pangkal Pinang</option>
+                                            <option value="Palembang">Palembang</option>
+                                            <option value="Bandar Lampung">Bandar Lampung</option>
                                         </optgroup>
-                                        <optgroup label="DKI Jakarta">
-                                            <option value="Jakarta">Jakarta</option>
-                                            <option value="Tanah Abang">Tanah Abang</option>
+                                        <optgroup label="Banten & D.K.I. Jakarta">
+                                            <option value="Lebak">Lebak</option>
+                                            <option value="Pandeglang">Pandeglang</option>
+                                            <option value="Serang">Serang</option>
+                                            <option value="Tangerang">Tangerang</option>
+                                            <option value="Cilegon">Cilegon</option>
+                                            <option value="Gambir">Gambir</option>
                                             <option value="Pasar Senen">Pasar Senen</option>
                                         </optgroup>
                                         <optgroup label="Jawa Barat">
+                                            <option value="Bekasi">Bekasi</option>
                                             <option value="Bandung">Bandung</option>
-                                            <option value="Cikampek">Cikampek</option>
-                                            <option value="Andir">Andir</option>
-                                        </optgroup>      
+                                            <option value="Bogor">Bogor</option>
+                                            <option value="Ciamis">Ciamis</option>
+                                            <option value="Cianjur">Cianjur</option>
+                                            <option value="Cirebon">Cirebon</option>
+                                            <option value="Garut">Garut</option>
+                                            <option value="Indramayu">Indramayu</option>
+                                            <option value="Karawang">Karawang</option>
+                                            <option value="Kuningan">Kuningan</option>
+                                            <option value="Majalengka">Majalengka</option>
+                                            <option value="Pangandaran">Pangandaran</option>
+                                            <option value="Purwakarta">Purwakarta</option>
+                                            <option value="Subang">Subang</option>
+                                            <option value="Sukabumi">Sukabumi</option>
+                                            <option value="Sumedang">Sumedang</option>
+                                            <option value="Tasikmalaya">Tasikmalaya</option>
+                                            <option value="Banjar">Banjar</option>
+                                            <option value="Cimahi">Cimahi</option>
+                                            <option value="Depok">Depok</option>                                            
+                                        </optgroup>
+                                        <optgroup label="Jawa Tengah">
+                                            <option value="Banjarnegara">Banjarnegara</option>
+                                            <option value="Banyumas">Banyumas</option>
+                                            <option value="Batang">Batang</option>
+                                            <option value="Blora">Blora</option>
+                                            <option value="Boyolali">Boyolali</option>
+                                            <option value="Brebes">Brebes</option>
+                                            <option value="Cilacap">Cilacap</option>
+                                            <option value="Demak">Demak</option>
+                                            <option value="Grobogan">Grobogan</option>
+                                            <option value="Jepara">Jepara</option>
+                                            <option value="Karanganyar">Karanganyar</option>
+                                            <option value="Kebumen">Kebumen</option>
+                                            <option value="Kendal">Kendal</option>
+                                            <option value="Klaten">Klaten</option>
+                                            <option value="Kudus">Kudus</option>
+                                            <option value="Megelang">Megelang</option>
+                                            <option value="Pati">Pati</option>
+                                            <option value="Pekalongan">Pekalongan</option>
+                                            <option value="Pemalang">Pemalang</option>
+                                            <option value="Purbalingga">Purbalingga</option>
+                                            <option value="Purworejo">Purworejo</option>
+                                            <option value="Rembang">Rembang</option>
+                                            <option value="Semarang">Semarang</option>
+                                            <option value="Sragen">Sragen</option>
+                                            <option value="Sukoharjo">Sukoharjo</option>
+                                            <option value="Tegal">Tegal</option>
+                                            <option value="Temanggung">Temanggung</option>
+                                            <option value="Wonogiri">Wonogiri</option>
+                                            <option value="Wonosobo">Wonosobo</option>
+                                            <option value="Surakarta">Surakarta</option>
+                                            <option value="Salatiga">Salatiga</option>
+                                            <option value="Pekalongan">Pekalongan</option>
+                                        </optgroup>
+                                        <optgroup label="Jawa Timur">
+                                            <option value="Bangkalan">Bangkalan</option>
+                                            <option value="Banyuwangi">Banyuwangi</option>
+                                            <option value="Blitar">Blitar</option>
+                                            <option value="Bojonegoro">Bojonegoro</option>
+                                            <option value="Bondowoso">Bondowoso</option>
+                                            <option value="Gresik">Gresik</option>
+                                            <option value="Jember">Jember</option>
+                                            <option value="Jombang">Jombang</option>
+                                            <option value="Kediri">Kediri</option>
+                                            <option value="Lamongan">Lamongan</option>
+                                            <option value="Lumajang">Lumajang</option>
+                                            <option value="Malang">Malang</option>
+                                            <option value="Mojokerto">Mojokerto</option>
+                                            <option value="Nganjuk">Nganjuk</option>
+                                            <option value="Ngawi">Ngawi</option>
+                                            <option value="Pacitan">Pacitan</option>
+                                            <option value="Pamekasan">Pamekasan</option>
+                                            <option value="Pasuruan">Pasuruan</option>
+                                            <option value="Ponorogo">Ponorogo</option>
+                                            <option value="Probolinggo">Probolinggo</option>
+                                            <option value="Sampang">Sampang</option>
+                                            <option value="Sidoarjo">Sidoarjo</option>
+                                            <option value="Situbondo">Situbondo</option>
+                                            <option value="Sumenep">Sumenep</option>
+                                            <option value="Trenggalek">Trenggalek</option>
+                                            <option value="Tuban">Tuban</option>
+                                            <option value="Tulungagung">Tulungagung</option>
+                                            <option value="Batu">Batu</option>
+                                            <option value="Madiun">Madiun</option>
+                                            <option value="Surabaya">Surabaya</option>                                            
+                                        </optgroup>
                                     </select>
                                 </div>                                
                             </div>
@@ -202,11 +387,16 @@
 
     <script>
         $(function () {
+            var d = new Date();
+            var s = d.setDate(d.getDate()+60)
+            // console.log(d);
             //Datetimepicker plugin
             $('.datetimepicker').bootstrapMaterialDatePicker({
                 format: 'dddd DD MMMM YYYY - HH:mm',
                 clearButton: true,
                 weekStart: 1,
+                minDate: new Date(),                
+                maxDate: d,
                 nowButton:true,
                 
             });         
@@ -228,22 +418,14 @@
                     exe.slideUp();
                     $('#submit').removeAttr("disabled");
                     break;
-                case "Bisnis":
+                case "Bussiness":
                     bus.slideDown();
                     bus.removeClass();
                     bus.addClass("col-md-12");
                     eco.slideUp();
                     exe.slideUp();
                     $('#submit').removeAttr("disabled");
-                    break;
-                case "Eksekutif":
-                    exe.slideDown();
-                    exe.removeClass();
-                    exe.addClass("col-md-12");
-                    eco.slideUp();
-                    bus.slideUp();
-                    $('#submit').removeAttr("disabled");
-                    break;                                
+                    break;                     
                 default:
                     eco.removeClass();
                     bus.removeClass();

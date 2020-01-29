@@ -86,7 +86,7 @@ class TransportationController extends Controller
         
         $jenis_class = $req->jenis_kelas;
         switch ($jenis_class) {
-            case 'Ekonomi AC':
+            case 'Economy':
             DB::table('kelas_kereta')->insert([
                 'jenis_kelas_kereta' => $jenis_class,
                 'jumlah_gerbong' => $req->gerbong,
@@ -95,7 +95,7 @@ class TransportationController extends Controller
                 'updated_at' => null
               ]);
                 break;
-            case 'Bisnis':
+            case 'Bussiness':
             DB::table('kelas_kereta')->insert([
                 'jenis_kelas_kereta' => $jenis_class,
                 'jumlah_gerbong' => $req->gerbong,
@@ -103,15 +103,6 @@ class TransportationController extends Controller
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => null
               ]);
-                break;
-            case 'Ekesekutif':
-                DB::table('kelas_kereta')->insert([
-                    'jenis_kelas_kereta' => $jenis_class,
-                    'jumlah_gerbong' => $req->gerbong,
-                    'jumlah_kursi' => $req->exe_seat,
-                    'created_at' => date('Y-m-d H:i:s'),
-                    'updated_at' => null
-                  ]);
                 break;
             default:
                 echo "Nothing";
@@ -191,14 +182,11 @@ class TransportationController extends Controller
             $id_class_train = $k->id_kelas_kereta;
         }
         switch ($req->jenis_kelas) {
-            case 'Ekonomi AC':
+            case 'Economy':
                 DB::update('update kelas_kereta set jenis_kelas_kereta = "'.$req->jenis_kelas.'", jumlah_gerbong = '.$req->gerbong.', jumlah_kursi = '.$req->eco_seat.', updated_at = "'.$date.'"  where id_kelas_kereta = '.$id_class_train);
                 break;
-            case 'Bisnis':
+            case 'Bussiness':
                 DB::update('update kelas_kereta set jenis_kelas_kereta = "'.$req->jenis_kelas.'", jumlah_gerbong = '.$req->gerbong.', jumlah_kursi = '.$req->bus_seat.', updated_at = "'.$date.'"  where id_kelas_kereta = '.$id_class_train);
-                break;
-            case 'Eksekutif':
-                DB::update('update kelas_kereta set jenis_kelas_kereta = "'.$req->jenis_kelas.'", jumlah_gerbong = '.$req->gerbong.', jumlah_kursi = '.$req->exe_seat.', updated_at = "'.$date.'"  where id_kelas_kereta = '.$id_class_train);
                 break;
             default:
             return redirect('showTrainDataTransportation');

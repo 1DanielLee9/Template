@@ -59,30 +59,27 @@
                                 @if ($k->jenis_kelas_kereta == "Ekonomi AC")
                                     <select name="jenis_kelas" class="form-control show-tick" id="trainClass" onchange="classMode()">
                                         <option value="" aria-placeholder="Pilih Salah Satu"></option>
-                                        <option value="Ekonomi AC" selected>Ekonomi AC</option>
-                                        <option value="Bisnis">Bisnis</option>
-                                        <option value="Eksekutif">Eksekutif</option>
+                                        <option value="Economy" selected>Economy</option>
+                                        <option value="Bussiness">Bussiness</option>`
                                     </select>
-                                @elseif($k->jenis_kelas_kereta == "Bisnis")
+                                @elseif($k->jenis_kelas_kereta == "Bussiness")
                                     <select name="jenis_kelas" class="form-control show-tick" id="trainClass" onchange="classMode()">
                                         <option value="" aria-placeholder="Pilih Salah Satu"></option>
-                                        <option value="Ekonomi AC">Ekonomi AC</option>
-                                        <option value="Bisnis" selected>Bisnis</option>
-                                        <option value="Eksekutif">Eksekutif</option>
+                                        <option value="Economy">Economy</option>
+                                        <option value="Bussiness" selected>Bussiness</option>`
                                     </select>                                
                                 @elseif($k->jenis_kelas_kereta == "Eksekutif")
                                     <select name="jenis_kelas" class="form-control show-tick" id="trainClass" onchange="classMode()">
                                         <option value="" aria-placeholder="Pilih Salah Satu"></option>
-                                        <option value="Ekonomi AC">Ekonomi AC</option>
-                                        <option value="Bisnis">Bisnis</option>
+                                        <option value="Economy">Economy</option>
+                                        <option value="Bussiness">Bussiness</option>
                                         <option value="Eksekutif" selected>Eksekutif</option>
                                     </select>                                
                                 @else
                                     <select name="jenis_kelas" class="form-control show-tick" id="trainClass" onchange="classMode()">
                                         <option value="" aria-placeholder="Pilih Salah Satu"></option>
-                                        <option value="Ekonomi AC">Ekonomi AC</option>
-                                        <option value="Bisnis">Bisnis</option>
-                                        <option value="Eksekutif">Eksekutif</option>
+                                        <option value="Economy">Economy</option>
+                                        <option value="Bussiness">Bussiness</option>`
                                     </select>                                
                                 @endif
                             </div>
@@ -575,7 +572,7 @@
         var exe = $('#exe');
         var cls = $('#trainClass').val();
             switch (cls) {
-                case "Ekonomi AC":
+                case "Economy":
                     eco.slideDown();
                     eco.removeClass();
                     eco.addClass("col-md-12");
@@ -583,22 +580,14 @@
                     exe.slideUp();
                     $('#submit').removeAttr("disabled");
                     break;
-                case "Bisnis":
+                case "Bussiness":
                     bus.slideDown();
                     bus.removeClass();
                     bus.addClass("col-md-12");
                     eco.slideUp();
                     exe.slideUp();
                     $('#submit').removeAttr("disabled");
-                    break;
-                case "Eksekutif":
-                    exe.slideDown();
-                    exe.removeClass();
-                    exe.addClass("col-md-12");
-                    eco.slideUp();
-                    bus.slideUp();
-                    $('#submit').removeAttr("disabled");
-                    break;                                
+                    break;                             
                 default:
                     eco.removeClass();
                     bus.removeClass();
@@ -623,7 +612,7 @@
         var exe = $('#exe');
         var cls = $('#trainClass').val();
             switch (cls) {
-                case "Ekonomi AC":
+                case "Economy":
                     eco.slideDown();
                     eco.removeClass();
                     eco.addClass("col-md-12");
@@ -631,22 +620,14 @@
                     exe.slideUp();
                     $('#submit').removeAttr("disabled");
                     break;
-                case "Bisnis":
+                case "Bussiness":
                     bus.slideDown();
                     bus.removeClass();
                     bus.addClass("col-md-12");
                     eco.slideUp();
                     exe.slideUp();
                     $('#submit').removeAttr("disabled");
-                    break;
-                case "Eksekutif":
-                    exe.slideDown();
-                    exe.removeClass();
-                    exe.addClass("col-md-12");
-                    eco.slideUp();
-                    bus.slideUp();
-                    $('#submit').removeAttr("disabled");
-                    break;                                
+                    break;                            
                 default:
                     eco.removeClass();
                     bus.removeClass();

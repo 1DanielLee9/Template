@@ -31,6 +31,14 @@
             <a href="javascript:void(0);"><img style="width:150px;" src="{{asset('Chiketto-logo-white.png')}}"></a>
             <small style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Take You Anywhere</small>
         </div>
+        @if (session('alert'))
+            <div class="header">
+                <div class="alert alert-warning alert-dismissible align-center" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>{{session('alert')}}</strong>
+                </div>
+            </div>
+        @endif
         <div class="card">
             <div class="body">
                 <form id="sign_in" method="post" action="customerSignIn">

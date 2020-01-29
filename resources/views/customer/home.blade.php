@@ -44,6 +44,9 @@
                     </div>
                     <div class="tabs-content">
                         <h1 style="margin: 0px; font-family: cursive;color: antiquewhite;">Welcome</h1><br>
+                        @if ($name != null)
+                            <h2 style="color: aliceblue;"><strong style="font-family: 'Courier New', Courier, monospace;">{{$name}}</strong></h2>
+                        @endif
                         <h4>Choose Your Transportation:</h4>
                         <ul class="social-links">
                             <li><a href="{{ route('customerFlight') }}">A <em>Flight</em> for the views<i class="fa fa-plane"></i></a></li>
@@ -53,7 +56,11 @@
                     </div>
                     <div class="page-direction-button">
                         <a href="{{ route('customerContact') }}"><i class="fa fa-phone"></i>Contact Us Now</a>
-                        <a href="{{ route('customerLogin') }}" style="background-color: skyblue;"><i class="fa fa-sign-in"></i>Login</a>
+                        @if ($id != null)
+                            <a href="{{ route('customerLogout') }}" style="background-color: darkturquoise;"><i class="fa fa-sign-out"></i>Logout</a>    
+                        @else
+                            <a href="{{ route('customerLogin') }}" style="background-color: skyblue;"><i class="fa fa-sign-in"></i>Login</a>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -456,7 +463,6 @@
             </div>
         </div>
     </div>
-</div>
 </div>
 
 

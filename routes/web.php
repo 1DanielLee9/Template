@@ -57,14 +57,17 @@ Route::get('/authority', 'HomeController@index')->name('home');
 //Customer
 Route::get('/','CustomerController@customerIndex')->name('customerHome');
 Route::get('customerLogin', 'CustomerController@customerLogin')->name('customerLogin');
+Route::get('customerLogout', 'CustomerController@customerLogout')->name('customerLogout');
 Route::post('customerSignIn','CustomerController@customerSignIn')->name('customerSignIn');
 Route::get('customerRegister', 'CustomerController@customerRegister')->name('customerRegister');
 Route::post('customerSignUp','CustomerController@customerSignUp')->name('customerSignUp');
 Route::get('customerContact','CustomerController@customerContact')->name('customerContact');
 Route::get('customerFlight','CustomerController@customerFlight')->name('customerFlight');
 Route::post('customerFlightFind','CustomerController@customerFlightFind')->name('customerFlightFind');
+Route::get('customerFlightTicket','CustomerController@customerFlightTicket')->name('customerFlightTicket');
 Route::get('customerTrain','CustomerController@customerTrain')->name('customerTrain');
 Route::post('customerTrainFind','CustomerController@customerTrainFind')->name('customerTrainFind');
+
 
 Route::get('/trial',function ()
 {

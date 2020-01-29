@@ -91,14 +91,14 @@
                     {{ csrf_field() }}
                     <div class="row clearfix">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <div class="form-group">                                
+                            <div class="form-group align-right">                                
                                 <input name="type" type="radio" value="oneway" id="oneway" class="with-gap radio-col-blue" />
                                 <label for="oneway">ONE WAY</label>                                
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <div class="form-group">
-                                <input name="type" type="radio" value="roundtrip" id="roundtrip" class="with-gap radio-col-blue" onchange="swaps()"/>
+                                <input name="type" type="radio" value="roundtrip" id="roundtrip" class="with-gap radio-col-blue"/>
                                 <label for="roundtrip">ROUNDTRIP</label>
                             </div>
                         </div> 
@@ -145,6 +145,66 @@
                                             <option value="Wamena">Wamena</option>
                                             <option value="Merauke">Merauke</option>                                    
                                         </optgroup>
+                                        <optgroup label="International">
+                                            <option value="Moscow">Moscow</option>
+                                            <option value="Rome">Rome</option>
+                                            <option value="Beijing">Beijing</option>
+                                            <option value="Seoul">Seoul</option>
+                                            <option value="Manila">Manila</option>
+                                            <option value="Athens">Athens</option>
+                                            <option value="New Delhi">New Delhi</option>
+                                            <option value="Canberra">Canberra</option>
+                                            <option value="Kuala Lumpur">Kuala Lumpur</option>
+                                            <option value="Islamabad">Islamabad</option>
+                                            <option value="Ankara">Ankara</option>
+                                            <option value="Abuja">Abuja</option>
+                                            <option value="Tehran">Tehran</option>
+                                            <option value="Prague">Prague</option>
+                                            <option value="Hanoi">Hanoi</option>
+                                            <option value="Jerusalem">Jerusalem</option>
+                                            <option value="Cairo">Cairo</option>
+                                            <option value="Copenhagen">Copenhagen</option>
+                                            <option value="Belmopan">Belmopan</option>
+                                            <option value="Valletta">Valletta</option>
+                                            <option value="Ottawa">Ottawa</option>
+                                            <option value="Nur-Sultan">Nur-Sultan</option>
+                                            <option value="Taipei">Taipei</option>
+                                            <option value="Porto-Novo">Porto-Novo</option>
+                                            <option value="Budapest">Budapest</option>
+                                            <option value="Helsinki">Helsinki</option>
+                                            <option value="Belgrade">Belgrade</option>
+                                            <option value="Brasilia">Brasilia</option>
+                                            <option value="Bern">Bern</option>
+                                            <option value="Pyongyang">Pyongyang</option>
+                                            <option value="Vienna">Vienna</option>
+                                            <option value="Yamoussoukro">Yamoussoukro</option>
+                                            <option value="Lisbon">Lisbon</option>
+                                            <option value="Addis Ababa">Addis Ababa</option>
+                                            <option value="Bucharest">Bucharest</option>
+                                            <option value="Baghdad">Baghdad</option>
+                                            <option value="Vientiane">Vientiane</option>
+                                            <option value="Tbilisi">Tbilisi</option>
+                                            <option value="Kabul">Kabul</option>
+                                            <option value="Oslo">Oslo</option>
+                                            <option value="Stockholm">Stockholm</option>
+                                            <option value="Dublin">Dublin</option>
+                                            <option value="Yerevan">Yerevan</option>
+                                            <option value="Warsaw">Warsaw</option>
+                                            <option value="Nairobi">Nairobi</option>
+                                            <option value="Bratislava">Bratislava</option>
+                                            <option value="Vilnius">Vilnius</option>
+                                            <option value="Phnom Penh">Phnom Penh</option>
+                                            <option value="Zagreb">Zagreb</option>
+                                            <option value="Tashkent">Tashkent</option>
+                                            <option value="Sarajevo">Sarajevo</option>
+                                            <option value="Washington D.C.">Washington D.C.</option>
+                                            <option value="London">London</option>
+                                            <option value="London">London</option>
+                                            <option value="Paris">Paris</option>
+                                            <option value="Pretoria">Pretoria</option>
+                                            <option value="Naypyitaw">Naypyitaw</option>
+                                            <option value="Tokyo">Tokyo</option>
+                                        </optgroup>                                        
                                     </select>
                                 </div>                        
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
@@ -224,6 +284,7 @@
                                             <option value="Brasilia">Brasilia</option>
                                             <option value="Bern">Bern</option>
                                             <option value="Pyongyang">Pyongyang</option>
+                                            <option value="Vienna">Vienna</option>
                                             <option value="Yamoussoukro">Yamoussoukro</option>
                                             <option value="Lisbon">Lisbon</option>
                                             <option value="Addis Ababa">Addis Ababa</option>
@@ -248,6 +309,9 @@
                                             <option value="London">London</option>
                                             <option value="London">London</option>
                                             <option value="Paris">Paris</option>
+                                            <option value="Pretoria">Pretoria</option>
+                                            <option value="Naypyitaw">Naypyitaw</option>
+                                            <option value="Tokyo">Tokyo</option>
                                         </optgroup>
                                     </select>
                                 </div>                        
@@ -270,63 +334,63 @@
                                 </div>
                             </div>                                            
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" id="seat_btn">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 align-center" id="seat_btn">
                             <h4><b id="number"></b> passengers, <b id="grade"></b> <a href="javascript:void(0);" style="text-decoration: none;" id="drpd" class="material-icons">keyboard_arrow_down</a></h4>
                         </div>
-                        <div class='row clearfix' id="fun">
-                            <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12' id='seat'>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="fun">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="seat">
                                 <h4>Passengers</h4>
-                                <div class='form-group'>
-                                    <div class='col-lg-4 col-md-4 col-sm-4 col-xs-4'>
-                                        <div class='input-group spinner' data-trigger='spinner'>
-                                            <div class='form-line'>
+                                <div class="form-group">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <div class="input-group spinner" data-trigger="spinner">
+                                            <div class="form-line">
                                                 <p>Adult</p>
-                                                <input type='text' id='adult' autocomplete='off' name='adult' class='form-control text-center' data-value='1' value='1' data-min='0' data-rule='quantity'>
+                                                <input type="text" id="adult" autocomplete="off" name="adult" class="form-control text-center" data-value="1" value="1" data-min="0" data-rule="quantity">
                                             </div>
-                                            <span class='input-group-addon'>
-                                                <a href='javascript:;' class='spin-up' data-spin='up'><i class='glyphicon glyphicon-chevron-up'></i></a>
-                                                <a href='javascript:;' class='spin-down' data-spin='down'><i class='glyphicon glyphicon-chevron-down'></i></a>
+                                            <span class="input-group-addon">
+                                                <a href="javascript:;" class="spin-up" data-spin="up"><i class="glyphicon glyphicon-chevron-up"></i></a>
+                                                <a href="javascript:;" class="spin-down" data-spin="down"><i class="glyphicon glyphicon-chevron-down"></i></a>
                                             </span>
                                         </div>
                                     </div>
-                                    <div class='col-lg-4 col-md-4 col-sm-4 col-xs-4'>
-                                        <div class='input-group spinner' data-trigger='spinner'>
-                                            <div class='form-line'>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <div class="input-group spinner" data-trigger="spinner">
+                                            <div class="form-line">
                                                 <p>Children</p>
-                                                <input type='text' id='children' autocomplete='off' name='children' class='form-control text-center' value='0' data-min='0' data-rule='quantity'>
+                                                <input type="text" id="children" autocomplete="off" name="children" class="form-control text-center" value="0" data-min="0" data-rule="quantity">
                                             </div>
-                                            <span class='input-group-addon'>
-                                                <a href='javascript:;' class='spin-up' data-spin='up'><i class='glyphicon glyphicon-chevron-up'></i></a>
-                                                <a href='javascript:;' class='spin-down' data-spin='down'><i class='glyphicon glyphicon-chevron-down'></i></a>
+                                            <span class="input-group-addon">
+                                                <a href="javascript:;" class="spin-up" data-spin="up"><i class="glyphicon glyphicon-chevron-up"></i></a>
+                                                <a href="javascript:;" class="spin-down" data-spin="down"><i class="glyphicon glyphicon-chevron-down"></i></a>
                                             </span>
                                         </div>
                                     </div>
-                                    <div class='col-lg-4 col-md-4 col-sm-4 col-xs-4' >
-                                        <div class='input-group spinner' data-trigger='spinner'>
-                                            <div class='form-line'>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" >
+                                        <div class="input-group spinner" data-trigger="spinner">
+                                            <div class="form-line">
                                                 <p>Infant</p>
-                                                <input type='text' id='infant' autocomplete='off' name='infant' class='form-control text-center' value='0' data-min='0' data-rule='quantity'>
+                                                <input type="text" id="infant" autocomplete="off" name="infant" class="form-control text-center" value="0" data-min="0" data-rule="quantity">
                                         </div>
-                                            <span class='input-group-addon'>
-                                                <a href='javascript:;' class='spin-up' data-spin='up'><i class='glyphicon glyphicon-chevron-up'></i></a>
-                                                <a href='javascript:;' class='spin-down' data-spin='down'><i class='glyphicon glyphicon-chevron-down'></i></a>
+                                            <span class="input-group-addon">
+                                                <a href="javascript:;" class="spin-up" data-spin="up"><i class="glyphicon glyphicon-chevron-up"></i></a>
+                                                <a href="javascript:;" class="spin-down" data-spin="down"><i class="glyphicon glyphicon-chevron-down"></i></a>
                                             </span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class='form-group'>
-                                <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12' id='class'>
+                            <div class="form-group">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="class">
                                     <h4>Cabin Class</h4>
-                                    <select class='form-control show-tick' name='grade' id='cabinClass'>
-                                        <option value='Economy'>Economy</option>
-                                        <option value='Bussiness'>Bussiness</option>
-                                        <option value='First Class'>First Class</option>
+                                    <select class="form-control show-tick" name="grade" id="cabinClass">
+                                        <option value="Economy">Economy</option>
+                                        <option value="Bussiness">Bussiness</option>
+                                        <option value="First Class">First Class</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                                <a href='javascript:void(0);' class='btn btn-block btn-primary waves-effect' id='ready'>Done</a>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <a href="javascript:void(0);" class="btn btn-block btn-primary waves-effect" id="ready">Done</a>
                             </div>                                
                         </div>                        
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -404,7 +468,8 @@
                 maxViewMode:1,
                 orientation: "auto left",
                 clearBtn:true,
-                todayHighlight:true
+                todayHighlight:true,
+                endDate:'+2m'   
             });   
         });
     </script> 

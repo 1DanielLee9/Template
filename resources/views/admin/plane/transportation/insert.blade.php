@@ -186,11 +186,16 @@
 
     <script>
         $(function () {
+            var d = new Date();
+            var s = d.setDate(d.getDate()+60)
+            // console.log(d);
             //Datetimepicker plugin
             $('.datetimepicker').bootstrapMaterialDatePicker({
                 format: 'dddd DD MMMM YYYY - HH:mm',
                 clearButton: true,
                 weekStart: 1,
+                minDate: new Date(),                
+                maxDate: d,
                 nowButton:true,
                 
             });         
