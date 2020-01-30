@@ -67,7 +67,7 @@ Route::post('customerFlightFind','CustomerController@customerFlightFind')->name(
 Route::get('customerFlightTicket','CustomerController@customerFlightTicket')->name('customerFlightTicket');
 Route::get('customerTrain','CustomerController@customerTrain')->name('customerTrain');
 Route::post('customerTrainFind','CustomerController@customerTrainFind')->name('customerTrainFind');
-
+Route::get('customerTrainTicket/{trainId}/{passengerId}/{cost}/{passengers}','CustomerController@customerTrainTicket')->name('customerTrainTicket');
 
 Route::get('/trial',function ()
 {

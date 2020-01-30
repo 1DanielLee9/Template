@@ -491,7 +491,8 @@
             var total = a+c+i;
             var grade = $('#cabinClass').val();
             $('#grade').text(grade);
-            $('#number').text(total);            
+            $('#number').text(total);
+            $('#done').removeAttr('disabled');
         });
     </script>
 

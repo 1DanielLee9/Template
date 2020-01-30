@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{ asset('customer/css/tooplate-style.css')}}">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
     <script src="{{ asset('customer/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script>
 </head>
@@ -44,9 +45,9 @@
                     </div>
                     <div class="tabs-content">
                         <h1 style="margin: 0px; font-family: cursive;color: antiquewhite;">Welcome</h1><br>
-                        {{-- @if ($name != null)
+                        @if ($name != null)
                             <h2 style="color: aliceblue;"><strong style="font-family: 'Courier New', Courier, monospace;">{{$name}}</strong></h2>
-                        @endif --}}
+                        @endif
                         <h4>Choose Your Transportation:</h4>
                         <ul class="social-links">
                             <li><a href="{{ route('customerFlight') }}">A <em>Flight</em> for the views<i class="fa fa-plane"></i></a></li>
@@ -56,11 +57,11 @@
                     </div>
                     <div class="page-direction-button">
                         <a href="{{ route('customerContact') }}"><i class="fa fa-phone"></i>Contact Us Now</a>
-                        {{-- @if ($id != null)
+                        @if ($id != null)
                             <a href="{{ route('customerLogout') }}" style="background-color: darkturquoise;"><i class="fa fa-sign-out"></i>Logout</a>    
                         @else
                             <a href="{{ route('customerLogin') }}" style="background-color: skyblue;"><i class="fa fa-sign-in"></i>Login</a>
-                        @endif --}}
+                        @endif
                     </div>
                 </div>
             </div>
@@ -78,7 +79,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-heading">
-                    <h2>Available Flight</h2>
+                    <h2>Available Train</h2>
                 </div>
             </div>
             <div class="wrapper">
@@ -86,24 +87,6 @@
                     <div class="row clearfix">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="card">
-                                {{-- <div class="header">
-                                    <h2>
-                                        STRIPED ROWS
-                                        <small>Use <code>.table-striped</code> to add zebra-striping to any table row within the <code>&lt;tbody&gt;</code></small>
-                                    </h2>
-                                    <ul class="header-dropdown m-r--5">
-                                        <li class="dropdown">
-                                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                <i class="material-icons">more_vert</i>
-                                            </a>
-                                            <ul class="dropdown-menu pull-right">
-                                                <li><a href="javascript:void(0);">Action</a></li>
-                                                <li><a href="javascript:void(0);">Another action</a></li>
-                                                <li><a href="javascript:void(0);">Something else here</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div> --}}
                                 <div class="body table-responsive">
                                     <table class="table table-striped table-hover">
                                         <thead>
@@ -118,14 +101,14 @@
                                         </thead>
                                         <tbody>
                                             @foreach ($data as $d)                                                
-                                                <tr>
-                                                    <th scope="row">{{ $loop->iteration }}</th>
-                                                    <td>{{$d->nama_kereta}}</td>
-                                                    <td>{{$d->keberangkatan_kereta}}</td>
-                                                    <td>{{$d->kedatangan_kereta}}</td>
-                                                    <td>{{$cost}}</td>
-                                                    <td><a href="javascript:void(0);" class="material-icons">local_atm</a></td>
-                                                </tr>
+                                                    <tr>
+                                                        <th scope="row">{{ $loop->iteration }}</th>
+                                                        <td>{{$d->nama_kereta}}</td>
+                                                        <td>{{$d->keberangkatan_kereta}}</td>
+                                                        <td>{{$d->kedatangan_kereta}}</td>
+                                                        <td>{{$cost}}</td>
+                                                        <td><a href="customerTrainTicket/{{$d->id_kereta}}/{{$id}}/{{$cost}}/{{$passengers}}" class="btn btn-success"><i class="material-icons">local_atm</i></a></td>
+                                                    </tr>
                                             @endforeach
                                         </tbody>
                                     </table>
