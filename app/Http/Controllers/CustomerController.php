@@ -171,8 +171,16 @@ class CustomerController extends Controller
         ->get();
 
         $depart;
+        $arrive;
+        $grade;
+        $from;
+        $to;
         foreach ($trainData as $t) {
-            $depart = $t->keberangkatan_kereta;                                    
+            $depart = $t->keberangkatan_kereta;
+            $arrive = $t->kedatangan_kereta;
+            $grade = $t->jenis_kelas_kereta;
+            $from = $t->asal_kereta;
+            $to = $t->tujuan_kereta;
         }
 
         $fee = $cost / $passengers;        
@@ -194,36 +202,58 @@ class CustomerController extends Controller
         ->where('pesan_kereta.id_pelanggan',$passengerId)
         ->get();
         
-        $bookId;
+        $bookId;        
 
         foreach ($bookData as $b) {
             $bookId = $b->id_pesan_kereta;                                    
         }
+        
+        $clockwise = explode(" ",$arrive);;
+        $clock = explode(" ",$depart);        
+        $date_start = $clock[1]." ".$clock[2]." ".$clock[3]." ".$clock[5];
+        $date_end = $clockwise[1]." ".$clockwise[2]." ".$clockwise[3]." ".$clockwise[5];        
+        $datetime_start = strtotime($date_start);
+        $datetime_end = strtotime($date_end);        
+        $time_start = date('d M Y H.i',$datetime_start);
+        $time_end = date('d M Y H.i',$datetime_end);
+        $book_code = $datetime_start."".$passengerId."".$trainId;        
 
-        $clock = explode(" ",$depart);
-        // $long = ($depart);
-        $date = $clock[1]." ".$clock[2]." ".$clock[3]." ".$clock[5];
-        // dd($clock);
-        $datetime = strtotime($date);
-        // echo $date."<br/>";
-        // echo $datetime."".$passengerId."<br/>";
-        // echo $depart;  
+        $cargo;
+        switch ($grade) {
+            case 'Economy':
+                $cargo = "ECAC";
+                break;
+            
+            case 'Bussiness':
+                $cargo = "BNAC";
+                break;                
+            
+            default:
+                echo $grade;
+                break;
+        }
 
+        $ticket = DB::table('ticket_kereta')
+                ->where('ticket_kereta.id');
+        $ticket_count = $ticket->count();        
 
-        // DB::table('tiket_kereta')->insert([
-        //     'id_pesan_kereta' =>$bookId,
-        //     'id_pelanggan' =>$passengerId,
-        //     'id_kereta' =>$trainId,
-        //     'id_pesan_kereta' =>,
-        //     'id_pesan_kereta' =>,
-        //     'id_pesan_kereta' =>,
-        //     'id_pesan_kereta' =>,
-        //     'id_pesan_kereta' =>,
-        //     'id_pesan_kereta' =>,
-        //     'id_pesan_kereta' =>,
-        //     'id_pesan_kereta' =>,
-        //     'id_pesan_kereta' =>,
-        // ]);
+        if ($ticket_count == 0) {
+            // DB::table('tiket_kereta')->insert([
+            //     'id_pesan_kereta' =>$bookId,
+            //     'id_pelanggan' =>$passengerId,
+            //     'id_kereta' =>$trainId,
+            //     'no_kursi' => $cargo.' I ; 1A',
+            //     'keberangkatan_kereta' =>$time_start,
+            //     'kedatangan_kereta' =>$time_end,
+            //     'asal_kereta' =>$from,
+            //     'tujuan_kereta' =>$to,
+            //     'created_at' =>date('Y-m-d H:i:s'),
+            //     'updated_at' =>null
+            // ]);   
+        } else {
+            $ticket->get();
+            
+        }        
 
         // DB::table('tiket_kereta')
         // ->where('pesan_kereta.id_pesan_kereta',$bookId)
