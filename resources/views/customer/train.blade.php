@@ -108,7 +108,7 @@
                                     <p>
                                         <b>From</b>
                                     </p>
-                                    <select data-size="3" name="from" class="form-control show-tick" data-live-search="true">
+                                    <select data-size="3" name="from" class="form-control show-tick" data-live-search="true" id="from">
                                         <optgroup label="Sumatra">
                                             <option value="Banda Aceh">Banda Aceh</option>
                                             <option value="Medan">Medan</option>
@@ -220,7 +220,7 @@
                                     </select>
                                 </div>                        
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 align-center">
-                                    <a href="javascript:void(0);" class="btn btn-primary btn-circle waves-effect waves-circle waves-float">
+                                    <a href="javascript:void(0);" class="btn btn-primary btn-circle waves-effect waves-circle waves-float" id="swap">
                                         <i class="material-icons" id="icons">swap_horiz</i>
                                     </a>
                                 </div>                        
@@ -228,7 +228,7 @@
                                     <p>
                                         <b>To</b>
                                     </p>
-                                    <select data-size="3" name="to" class="form-control show-tick" data-live-search="true" >
+                                    <select data-size="3" name="to" class="form-control show-tick" data-live-search="true" id="to">
                                         <optgroup label="Sumatra">
                                             <option value="Banda Aceh">Banda Aceh</option>
                                             <option value="Medan">Medan</option>
@@ -479,6 +479,17 @@
                     $('#done').attr('disabled','true');
                 }
             });
+        });
+    </script>
+
+    <script>
+        $('#swap').click(function () {
+            var from = $('#from').val();
+            var to = $('#to').val();
+            $('button[data-id="from"]').attr('title',to);
+            $('button[data-id="from"] span .filter-option ').val(to);
+            $('button[data-id="to"]').attr('title',from);
+            $('button[data-id="to"] span .filter-option ').val(from);
         });
     </script>
 

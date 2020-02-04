@@ -175,12 +175,16 @@ class CustomerController extends Controller
         $grade;
         $from;
         $to;
+        $total_cargo;
+        $total_seat;
         foreach ($trainData as $t) {
             $depart = $t->keberangkatan_kereta;
             $arrive = $t->kedatangan_kereta;
             $grade = $t->jenis_kelas_kereta;
             $from = $t->asal_kereta;
             $to = $t->tujuan_kereta;
+            $total_cargo = intval($t->jumlah_gerbong);
+            $total_seat = intval($t->jumlah_kursi);
         }
 
         $fee = $cost / $passengers;        
@@ -197,10 +201,10 @@ class CustomerController extends Controller
         //     'updated-at'=>null          
         // ]);
 
-        $bookData = DB::table('pesan_kereta')
-        ->where('pesan_kereta.id_kereta',$trainId)
-        ->where('pesan_kereta.id_pelanggan',$passengerId)
-        ->get();
+        // $bookData = DB::table('pesan_kereta')
+        // ->where('pesan_kereta.id_kereta',$trainId)
+        // ->where('pesan_kereta.id_pelanggan',$passengerId)
+        // ->get();
         
         $bookId;        
 
@@ -232,26 +236,47 @@ class CustomerController extends Controller
                 echo $grade;
                 break;
         }
+        
+        
+        DB::table('tiket_kereta')->insert([
+            'id_pesan_kereta' =>$bookId,
+            'id_pelanggan' =>$passengerId,
+            'id_kereta' =>$trainId,
+            'no_kursi' => 0,
+            'keberangkatan_kereta' =>$time_start,
+            'kedatangan_kereta' =>$time_end,
+            'asal_kereta' =>$from,
+            'tujuan_kereta' =>$to,
+            'created_at' =>date('Y-m-d H:i:s'),
+            'updated_at' =>null
+        ]);
 
-        $ticket = DB::table('ticket_kereta')
-                ->where('ticket_kereta.id');
-        $ticket_count = $ticket->count();        
+        $ticket = DB::table('tiket_kereta')
+                ->where('tiket_kereta.id_kereta',$trainId);
+        $ticket_count = $ticket        
+        ->where('tiket_kereta.keberangkatan_kereta',$time_start)
+        ->where('tiket_kereta.kedatangan_kereta',$time_end)
+        ->count();        
+        $ticketData = $ticket
+        ->where('tiket_kereta.id_pelanggan',$passengerId)
+        ->where('tiket_kereta.keberangkatan_kereta',$time_start)
+        ->where('tiket_kereta.kedatangan_kereta',$time_end)
+        ->get();
+        $ticketId;
+        foreach ($ticketData as $td) {
+            $ticketId = $td->id_tiket_kereta;
+        }
 
-        if ($ticket_count == 0) {
-            // DB::table('tiket_kereta')->insert([
-            //     'id_pesan_kereta' =>$bookId,
-            //     'id_pelanggan' =>$passengerId,
-            //     'id_kereta' =>$trainId,
-            //     'no_kursi' => $cargo.' I ; 1A',
-            //     'keberangkatan_kereta' =>$time_start,
-            //     'kedatangan_kereta' =>$time_end,
-            //     'asal_kereta' =>$from,
-            //     'tujuan_kereta' =>$to,
-            //     'created_at' =>date('Y-m-d H:i:s'),
-            //     'updated_at' =>null
-            // ]);   
-        } else {
-            $ticket->get();
+        $divgrade;
+        if ($ticket_count == 1) {
+            echo $ticket_count;
+            // $divgrade = numberToRoman(1);
+            // DB::table('tiket_kereta')->update([
+            //      'no_kursi'=>$cargo.' '.$divgrade.' ; 1'
+            // ])
+            // ->where('id_tiket_kereta',$ticketId);
+        // } else {
+            
             
         }        
 
@@ -275,5 +300,39 @@ class CustomerController extends Controller
     {
         return view('customer.findFlight');
     }    
+
+
+
+    /**
+     * Converts a number to its roman presentation.
+     **/ 
+    function numberToRoman($num)  
+    { 
+        // Be sure to convert the given parameter into an integer
+        $n = intval($num);
+        $result = ''; 
+    
+        // Declare a lookup array that we will use to traverse the number: 
+        $lookup = array(
+            'M' => 1000, 'CM' => 900, 'D' => 500, 'CD' => 400, 
+            'C' => 100, 'XC' => 90, 'L' => 50, 'XL' => 40, 
+            'X' => 10, 'IX' => 9, 'V' => 5, 'IV' => 4, 'I' => 1
+        ); 
+    
+        foreach ($lookup as $roman => $value)  
+        {
+            // Look for number of matches
+            $matches = intval($n / $value); 
+    
+            // Concatenate characters
+            $result .= str_repeat($roman, $matches); 
+    
+            // Substract that from the number 
+            $n = $n % $value; 
+        } 
+
+        return $result; 
+    } 
+
 
 }
